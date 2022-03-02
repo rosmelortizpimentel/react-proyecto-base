@@ -1,2 +1,3 @@
 # react-proyecto-base
-Este es el proyecto base del curso de react
+
+Clonar el repositorio localmente e instalar dependencias con "npm i"
