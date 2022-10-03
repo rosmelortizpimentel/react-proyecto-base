@@ -7,3 +7,4 @@
 # Team Developers
 
 Rosmel Ortiz
+Juan Diego
