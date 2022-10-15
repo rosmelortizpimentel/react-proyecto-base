@@ -1,10 +1,20 @@
-# react-proyecto-base
+# Marvel App
 
-- Clonar el repositorio localmente
-- Instalar dependencias con "npm i"
-- Ejecutar npm start
+Busca a tus personajes favoritos del Universo Marvel
 
-# Team Developers
+**Instalar depedendencias**
 
-Rosmel Ortiz
-Juan Diego
+```
+npm install
+```
+
+**Ejecutar en Local**
+
+```
+npm start
+```
+
+**Equipo de Desarrollo**
+
+> Rosmel Ortiz
+> Juan Diego
