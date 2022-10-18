@@ -1,11 +1,12 @@
 import { ThemeProvider } from '@emotion/react';
 import PropTypes from 'prop-types';
 import { CssBaseline } from '@mui/material';
-import { defaultTheme } from './defaultTheme';
+import { redTheme } from './redTheme';
+// import { defaultTheme } from './defaultTheme';
 
 export default function AppTheme({ children }) {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={redTheme}>
       <CssBaseline />
       {children}
     </ThemeProvider>

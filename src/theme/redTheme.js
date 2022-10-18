@@ -1,12 +1,12 @@
 import { createTheme } from '@mui/material';
 
-export const defaultTheme = createTheme({
+export const redTheme = createTheme({
   palette: {
     primary: {
-      main: '#202020',
+      main: '#e62429',
     },
     secondary: {
-      main: '#e62429',
+      main: '#202020',
     },
   },
 });
