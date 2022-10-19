@@ -5,11 +5,8 @@ export const PrincipalLayout = ({ children, title = '' }) => {
   return (
     <Grid
       container
-      spacing={0}
       direction="column"
-      // alignItems="center"
-      // justifyContent="center"
-      sx={{ minHeight: '100vh', backgroundColor: 'primary.main', padding: 1 }}>
+      sx={{ minHeight: '100vh', backgroundColor: 'primary.main', padding: 3 }}>
       <Grid
         item
         className="box-shadow"
@@ -17,7 +14,7 @@ export const PrincipalLayout = ({ children, title = '' }) => {
         sx={{
           width: { sm: '100%' },
           backgroundColor: 'white',
-          padding: 3,
+          padding: 4,
           borderRadius: 2,
         }}>
         <Typography variant="h5" sx={{ mb: 1 }}>
