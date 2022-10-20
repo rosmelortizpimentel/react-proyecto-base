@@ -15,7 +15,7 @@ export const ComicsGrid = () => {
   const { idCharacter } = useParams();
   const { comics, isLoading } = useGetComics(idCharacter);
 
-  const message = comics.length == 0 ? 'No results found' : 'Results';
+  const message = comics.length == 0 ? 'No results found' : '';
   if (isLoading)
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>

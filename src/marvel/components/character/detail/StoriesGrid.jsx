@@ -18,7 +18,7 @@ export const StoriesGrid = () => {
   const { stories, isLoading } = useGetStories(idCharacter);
   useEffect(() => {}, []);
 
-  const message = stories.length == 0 ? 'No results found for' : 'Results for';
+  const message = stories.length == 0 ? 'No results found for' : '';
   if (isLoading)
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>
