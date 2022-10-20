@@ -11,7 +11,7 @@ export const Footer = () => {
           <Link href="https://github.com/rosmelortizpimentel" underline="hover" target="_blank">
             Rosmel Ortiz
           </Link>
-          {' | '}|
+          {' | '}
           <Link href="https://github.com/juandiego85" underline="hover" target="_blank">
             Juan Diego Inga
           </Link>

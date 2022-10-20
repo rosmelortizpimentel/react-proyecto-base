@@ -8,11 +8,18 @@ export const Header = () => {
     navigate('/auth/login', { replace: true });
   };
   return (
-    <Grid item xs={12} sm={6} textAlign="end" padding={1}>
-      <Button variant="contained" sx={{ backgroundColor: 'secondary.main' }} onClick={onLogout}>
-        <Logout />
-        <Typography sx={{ ml: 1 }}>Logout</Typography>
-      </Button>
-    </Grid>
+    <>
+      <Grid item xs={12} sm={6} textAlign="right" alignContent="center" padding={1}>
+        {/* <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.png"
+          alt="Marvel"
+          style={{ height: '60px' }}
+        />{' '} */}
+        <Button variant="contained" sx={{ backgroundColor: 'secondary.main' }} onClick={onLogout}>
+          <Logout />
+          <Typography sx={{ ml: 1 }}>Logout</Typography>
+        </Button>
+      </Grid>
+    </>
   );
 };
