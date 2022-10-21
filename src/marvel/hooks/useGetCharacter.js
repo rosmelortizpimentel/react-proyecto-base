@@ -5,14 +5,14 @@ export const useGetCharacter = (query) => {
   const [character, setCharacter] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getAllCharacters = async () => {
+  const getAllCharacter = async () => {
     const character = await getCharacter(query);
     setCharacter(character);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getAllCharacters();
+    getAllCharacter();
   }, []);
 
   return {

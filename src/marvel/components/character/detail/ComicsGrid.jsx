@@ -24,10 +24,9 @@ export const ComicsGrid = () => {
     );
 
   return (
-    <Box>
+    <Box item xs={12}>
       {message}
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item xs={1}></Grid>
         <Grid item container xs={12} spacing={1}>
           {comics.map((per) => (
             <Grid item xs={12} sm={4} md={3} xl={2} key={per.id}>
@@ -36,13 +35,15 @@ export const ComicsGrid = () => {
                   style={{
                     width: 180,
                     height: 200,
+                    borderTopLeftRadius: 5,
+                    borderTopRightRadius: 5,
                   }}
-                  src={`${per.image}`}
+                  src={per.image}
                 />
-                <Typography gutterBottom variant="subtitle1">
+                <Typography variant="body2" textAlign="center">
                   {per.title}
                 </Typography>
-                <Typography variant="subtitle1">
+                <Typography variant="body2" fontWeight="bold">
                   {'$ '}
                   {per.price}
                 </Typography>
@@ -50,7 +51,6 @@ export const ComicsGrid = () => {
             </Grid>
           ))}
         </Grid>
-        <Grid item xs={1}></Grid>
       </Grid>
     </Box>
   );

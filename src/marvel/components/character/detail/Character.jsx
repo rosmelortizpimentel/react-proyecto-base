@@ -1,7 +1,4 @@
-//import styled from '@emotion/styled';
 import { Box, CircularProgress, Grid, Typography, ButtonBase, Paper, styled } from '@mui/material';
-import Moment from 'react-moment';
-
 import { useParams } from 'react-router-dom';
 import { useGetCharacter } from '../../../hooks/useGetCharacter';
 
@@ -15,7 +12,7 @@ const Img = styled('img')({
 export const Character = () => {
   const { idCharacter } = useParams();
   const { character, isLoading } = useGetCharacter(idCharacter);
-  console.log(character[0], '====character');
+  console.log(character, '====character');
   const message = character.total == 0 ? 'No results found' : '';
   if (isLoading)
     return (
@@ -35,29 +32,26 @@ export const Character = () => {
           flexGrow: 1,
           backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#fff'),
         }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justifyContent="center" textAlign="center" alignItems="center">
           <Grid item>
-            <ButtonBase sx={{ width: 128, height: 128 }}>
-              <Img alt="character" src={`${character[0].image}`} />
+            <ButtonBase sx={{ width: 128, height: 128 }} justifyContent="center" textAlign="center">
+              <Img alt="character" src={character.image} sx={{ borderRadius: '50%' }} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1" component="div">
-                  {`${character[0].name}`}
+                <Typography variant="subtitle1" fontWeight="bold">
+                  {character.name}
                 </Typography>
-                <Moment format="DD/MM/YYYY">{`${character[0].modified}`}</Moment>
-
-                <Typography variant="body2" color="text.secondary">
-                  ID: {`${character[0].id}`}
+                <Typography variant="body2" color="text.secondary" fontWeight="bold">
+                  ID: {character.id}
                 </Typography>
-              </Grid>
-              <Grid item>
-                <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                  Regresar
+                <Typography variant="body2" color="text.secondary" textAlign="justify">
+                  {character.description}
                 </Typography>
               </Grid>
+              <Grid item></Grid>
             </Grid>
           </Grid>
         </Grid>

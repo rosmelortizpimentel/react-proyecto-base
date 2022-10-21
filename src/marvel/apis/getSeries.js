@@ -11,6 +11,8 @@ export const getSeries = async (query) => {
     modified: item.modified,
     image: `${item?.thumbnail?.path}.${item?.thumbnail?.extension}`,
     description: item.description,
+    startYear: item.startYear,
+    endYear: item.endYear,
     count: data.count,
     total: data.total,
   }));

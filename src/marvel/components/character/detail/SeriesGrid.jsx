@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Box, CircularProgress, Grid, Paper, Typography } from '@mui/material';
-import Moment from 'react-moment';
 import { useParams } from 'react-router-dom';
 import { useGetseries } from '../../../hooks/useGetSeries';
 
@@ -16,7 +15,7 @@ export const SeriesGrid = () => {
   const { idCharacter } = useParams();
   const { series, isLoading } = useGetseries(idCharacter);
 
-  const message = series.length == 0 ? 'No results found' : 'Results';
+  const message = series.length == 0 ? 'No results found' : '';
   if (isLoading)
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>
@@ -37,14 +36,18 @@ export const SeriesGrid = () => {
                   style={{
                     width: 180,
                     height: 200,
+                    borderTopLeftRadius: 5,
+                    borderTopRightRadius: 5,
                   }}
-                  src={`${per.image}`}
+                  src={per.image}
                 />
-                <Typography gutterBottom variant="subtitle1">
+                <Typography variant="body2" textAlign="center">
                   {per.title}
                 </Typography>
                 <Box sx={{ flexGrow: 1 }}>
-                  <Moment format="DD/MM/YYYY">{per.modified}</Moment>
+                  <Typography variant="body2" fontWeight="bold">
+                    {per.startYear} - {per.endYear}
+                  </Typography>
                 </Box>
               </Item>
             </Grid>

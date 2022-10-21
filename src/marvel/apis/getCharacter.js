@@ -5,18 +5,16 @@ export const getCharacter = async (query) => {
   const url = `${URL_API_MAPPING['CHARACTERS_URL']}/${query}${URL_API_MAPPING['AUTH']}`;
   const data = await get(url);
 
-  const character = data.map((item) => ({
-    id: item.id,
-    name: item.name,
-    modified: item.modified,
-    image: `${item.thumbnail.path}.${item.thumbnail.extension}`,
-    description: item.description,
-    comics: item.comics.available,
-    events: item.events.available,
-    series: item.series.available,
-    stories: item.stories.available,
-    count: data.count,
-    total: data.total,
-  }));
+  const character = {
+    id: data[0].id,
+    name: data[0].name,
+    modified: data[0].modified,
+    image: `${data[0].thumbnail.path}.${data[0].thumbnail.extension}`,
+    description: data[0].description,
+    comics: data[0].comics.available,
+    events: data[0].events.available,
+    series: data[0].series.available,
+    stories: data[0].stories.available,
+  };
   return character;
 };
