@@ -40,10 +40,9 @@ export const SeriesGrid = () => {
                   }}
                   src={`${per.image}`}
                 />
-                <Typography>{per.title}</Typography>
+                <Typography gutterBottom variant="subtitle1">{per.title}</Typography>
                 <Box sx={{ flexGrow: 1 }}>
                   <Moment format="DD/MM/YYYY">{per.modified}</Moment>
-                  <Typography>{per.price}</Typography>
                 </Box>
               </Item>
             </Grid>
