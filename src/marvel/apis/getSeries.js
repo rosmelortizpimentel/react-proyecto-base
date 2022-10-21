@@ -1,25 +1,18 @@
+import { get } from '../../helpers/api';
 import { URL_API_MAPPING } from '../../helpers/urls';
 
 export const getSeries = async (query) => {
   const url = `${URL_API_MAPPING['CHARACTERS_URL']}/${query}/series${URL_API_MAPPING['AUTH']}`;
-  const headers = {
-    'Content-Type': 'application/json; charset=utf-8',
-  };
+  const data = await get(url);
 
-  const resp = await fetch(url, {
-    method: 'GET',
-    headers,
-  });
-
-  const { data } = await resp.json();
-  const comics = data.results.map((comic) => ({
-    id: comic.id,
-    title: comic.title,
-    modified: comic.modified,
-    image: `${comic?.thumbnail?.path}.${comic?.thumbnail?.extension}`,
-    description: comic.description,
+  const series = data.map((item) => ({
+    id: item.id,
+    title: item.title,
+    modified: item.modified,
+    image: `${item?.thumbnail?.path}.${item?.thumbnail?.extension}`,
+    description: item.description,
     count: data.count,
     total: data.total,
   }));
-  return comics;
+  return series;
 };

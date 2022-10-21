@@ -59,22 +59,22 @@ export const CharacterItem = ({
           </CardContent>
           <CardActions>
             <Box sx={{ flexGrow: 1 }}>
-              {comics != 0 && (
+              {comics !== 0 && (
                 <Button size="small" component="span">
                   Comics ({comics}){' '}
                 </Button>
               )}
-              {stories != 0 && (
+              {stories !== 0 && (
                 <Button size="small" component="span">
                   Stories ({stories}){' '}
                 </Button>
               )}
-              {series != 0 && (
+              {series !== 0 && (
                 <Button size="small" component="span">
                   Series ({series}){' '}
                 </Button>
               )}
-              {events != 0 && (
+              {events !== 0 && (
                 <Button size="small" component="span">
                   Events ({events}){' '}
                 </Button>

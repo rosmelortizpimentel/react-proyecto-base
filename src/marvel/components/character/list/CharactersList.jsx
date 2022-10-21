@@ -15,7 +15,7 @@ export const CharactersList = ({ query }) => {
     fontSize: '1.5em',
     textTransform: 'capitalize',
   };
-  const message = characters.length == 0 ? 'No results found for' : 'Results for';
+  const message = characters?.length === 0 ? 'No results found for' : 'Results for';
 
   if (isLoading)
     return (
@@ -29,7 +29,7 @@ export const CharactersList = ({ query }) => {
       <Box sx={{ flexGrow: 1 }}>
         <Box sx={{ lexGrow: 1, paddingTop: 10, paddingBottom: 2 }}>
           <Badge badgeContent={characters.length} color="primary">
-            {characters.length == 0 ? <SentimentVeryDissatisfiedIcon /> : <FilterIcon />}
+            {characters.length === 0 ? <SentimentVeryDissatisfiedIcon /> : <FilterIcon />}
           </Badge>
           <Typography variant="subtitle1">{message}</Typography>
           <Typography variant="h3" sx={queryStyles}>
@@ -38,7 +38,7 @@ export const CharactersList = ({ query }) => {
         </Box>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2}>
-            {characters.map((character) => (
+            {characters?.map((character) => (
               <CharacterItem key={character.id} {...character} />
             ))}
           </Grid>
