@@ -10,12 +10,12 @@ export const CharacterDetail = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
+
   return (
     <>
-     <Box>
-      <Character></Character>
-    </Box>
+      <Box>
+        <Character></Character>
+      </Box>
       <Box sx={{ width: '100%' }}>
         <Box>
           <Tabs value={value} onChange={handleChange} variant="fullWidth">

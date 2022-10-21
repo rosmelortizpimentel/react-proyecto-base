@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Box, CircularProgress, Grid, Paper, Typography } from '@mui/material';
-import React, { useEffect } from 'react';
 import Moment from 'react-moment';
 import { useParams } from 'react-router-dom';
 import { useGetStories } from '../../../hooks/useGetStories';
