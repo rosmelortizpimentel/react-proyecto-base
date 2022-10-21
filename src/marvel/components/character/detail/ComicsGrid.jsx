@@ -39,13 +39,11 @@ export const ComicsGrid = () => {
                   }}
                   src={`${per.image}`}
                 />
-                <Typography>{per.title}</Typography>
-                <Box sx={{ flexGrow: 1 }}>
-                  <Typography>
+                <Typography gutterBottom variant="subtitle1">{per.title}</Typography>
+                 <Typography variant="subtitle1">
                     {'$ '}
                     {per.price}
                   </Typography>
-                </Box>
               </Item>
             </Grid>
           ))}

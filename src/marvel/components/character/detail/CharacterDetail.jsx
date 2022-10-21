@@ -1,31 +1,21 @@
-import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { useGetComics } from '../../../hooks/useGetComics';
-import { Tabs, Tab, Box, CircularProgress } from '@mui/material';
+import { Tabs, Tab, Box } from '@mui/material';
 import { ComicsGrid } from './ComicsGrid';
 import { StoriesGrid } from './StoriesGrid';
 import { SeriesGrid } from './SeriesGrid';
+import { Character } from './Character';
 
 export const CharacterDetail = () => {
-  const { idCharacter } = useParams();
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { comics, isLoading } = useGetComics(idCharacter);
-
-  const message = comics.length == 0 ? 'No results found for' : 'Results for';
-  console.log(message);
-  console.log(comics, '===CharacterDetai');
-  if (isLoading)
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>
-        <CircularProgress />
-      </Box>
-    );
-
+  
   return (
     <>
+     <Box>
+      <Character></Character>
+    </Box>
       <Box sx={{ width: '100%' }}>
         <Box>
           <Tabs value={value} onChange={handleChange} variant="fullWidth">
