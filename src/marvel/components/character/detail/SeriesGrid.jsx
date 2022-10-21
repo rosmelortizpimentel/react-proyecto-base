@@ -27,10 +27,9 @@ export const SeriesGrid = () => {
     <Box>
       {message}
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item xs={1}></Grid>
-        <Grid item container xs={10} spacing={4}>
+        <Grid item container xs={12} spacing={1} justifyContent="center">
           {series.map((per) => (
-            <Grid item xs={12} sm={4} md={3} xl={2} key={per.id}>
+            <Grid item xs={12} sm={4} md={3} xl={2} key={per.id} sx={{ minWidth: 200 }}>
               <Item>
                 <img
                   style={{

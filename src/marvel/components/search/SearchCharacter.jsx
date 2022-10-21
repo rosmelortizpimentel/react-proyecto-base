@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Box, TextField, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { Search } from '@mui/icons-material';
+import { Search } from '@mui/icons-material';
 
 export const SearchCharacter = ({ onNewSearch }) => {
   const navigate = useNavigate();
@@ -23,13 +23,21 @@ export const SearchCharacter = ({ onNewSearch }) => {
 
   return (
     <form onSubmit={onSumbit}>
-      <Typography variant="subtitle2" sx={{ fontSize: '1.5em', paddingBottom: 1 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.png"
+          alt="Marvel"
+          style={{ height: '60px' }}
+        />
+      </Box>
+      <Typography
+        variant="subtitle2"
+        sx={{ fontSize: '1.5em', paddingBottom: 1, textAlign: 'center' }}>
         Search Marvel Character
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        {/* <Search sx={{ color: 'action.active' }} /> */}
+        <Search sx={{ color: 'action.active' }} />
         <TextField
-          //label="Search Marvel character"
           variant="standard"
           fullWidth
           value={inputValue}

@@ -2,7 +2,7 @@ import { URL_API_MAPPING } from '../../helpers/urls';
 import { get } from '../../helpers/api';
 
 export const getComics = async (query) => {
-  const url = `${URL_API_MAPPING['CHARACTERS_URL']}/${query}/comics${URL_API_MAPPING['AUTH']}`;
+  const url = `${URL_API_MAPPING['CHARACTERS_URL']}/${query}/comics${URL_API_MAPPING['AUTH']}&orderBy=-modified`;
   const data = await get(url);
 
   const comics = data.map((item) => ({

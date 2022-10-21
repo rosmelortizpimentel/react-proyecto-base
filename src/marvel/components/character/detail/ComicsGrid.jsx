@@ -27,9 +27,9 @@ export const ComicsGrid = () => {
     <Box item xs={12}>
       {message}
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item container xs={12} spacing={1}>
+        <Grid item container xs={12} spacing={1} justifyContent="center">
           {comics.map((per) => (
-            <Grid item xs={12} sm={4} md={3} xl={2} key={per.id}>
+            <Grid item xs={12} sm={4} md={3} xl={2} key={per.id} sx={{ minWidth: 200 }}>
               <Item>
                 <img
                   style={{
