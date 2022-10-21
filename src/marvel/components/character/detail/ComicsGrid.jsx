@@ -27,7 +27,7 @@ export const ComicsGrid = () => {
     <Box item xs={12}>
       {message}
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item container xs={12} spacing={1} justifyContent="center">
+        <Grid item container xs={12} spacing={2} justifyContent="center">
           {comics.map((per) => (
             <Grid item xs={12} sm={4} md={3} xl={2} key={per.id} sx={{ minWidth: 200 }}>
               <Item>
@@ -43,9 +43,11 @@ export const ComicsGrid = () => {
                 <Typography variant="body2" textAlign="center">
                   {per.title}
                 </Typography>
-                <Typography variant="body2" fontWeight="bold">
-                  {'$ '}
-                  {per.price}
+                <Typography
+                  variant="body2"
+                  fontWeight="bold"
+                  color={per.price == 0 ? 'secondary' : 'primary'}>
+                  {per.price == 0 ? 'Priceless' : 'Price $' + per.price}
                 </Typography>
               </Item>
             </Grid>

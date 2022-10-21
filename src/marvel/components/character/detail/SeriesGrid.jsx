@@ -27,7 +27,7 @@ export const SeriesGrid = () => {
     <Box>
       {message}
       <Grid container justifyContent="center" alignItems="center">
-        <Grid item container xs={12} spacing={1} justifyContent="center">
+        <Grid item container xs={12} spacing={2} justifyContent="center">
           {series.map((per) => (
             <Grid item xs={12} sm={4} md={3} xl={2} key={per.id} sx={{ minWidth: 200 }}>
               <Item>
@@ -44,8 +44,10 @@ export const SeriesGrid = () => {
                   {per.title}
                 </Typography>
                 <Box sx={{ flexGrow: 1 }}>
-                  <Typography variant="body2" fontWeight="bold">
-                    {per.startYear} - {per.endYear}
+                  <Typography variant="body2" fontWeight="bold" color="primary">
+                    {per.startYear == per.endYear
+                      ? per.startYear
+                      : per.startYear + ' - ' + per.endYear}
                   </Typography>
                 </Box>
               </Item>
