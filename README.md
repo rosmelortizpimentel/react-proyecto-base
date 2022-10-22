@@ -1,6 +1,7 @@
 # Marvel App
 
-Busca a tus personajes favoritos del Universo Marvel
+Busca a tus personajes favoritos del Universo Marvel.
+URL: https://find-marvel-characters.netlify.app/
 
 **Agregar .env**
 
