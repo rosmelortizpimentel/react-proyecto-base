@@ -1,5 +1,5 @@
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
+import { Alert, Box, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../layout/AuthLayout';
 import { useState } from 'react';
@@ -21,7 +21,14 @@ export const LoginPage = () => {
   };
 
   return (
-    <AuthLayout title="Login">
+    <AuthLayout title="" text>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.png"
+          alt="Marvel"
+          style={{ height: '60px' }}
+        />
+      </Box>
       {message && <Alert severity="error">{message}</Alert>}
       <form>
         <Grid container>
