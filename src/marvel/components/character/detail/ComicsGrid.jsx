@@ -24,7 +24,7 @@ export const ComicsGrid = () => {
     );
 
   return (
-    <Box item xs={12}>
+    <Box xs={12}>
       {message}
       <Grid container justifyContent="center" alignItems="center">
         <Grid item container xs={12} spacing={2} justifyContent="center">
