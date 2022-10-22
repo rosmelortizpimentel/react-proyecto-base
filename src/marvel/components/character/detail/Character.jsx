@@ -12,7 +12,6 @@ const Img = styled('img')({
 export const Character = () => {
   const { idCharacter } = useParams();
   const { character, isLoading } = useGetCharacter(idCharacter);
-  console.log(character, '====character');
   const message = character.total == 0 ? 'No results found' : '';
   if (isLoading)
     return (
@@ -32,15 +31,15 @@ export const Character = () => {
           flexGrow: 1,
           backgroundColor: (theme) => (theme.palette.mode === 'dark' ? '#1A2027' : '#fff'),
         }}>
-        <Grid container spacing={2} justifyContent="center" textAlign="center" alignItems="center">
+        <Grid container spacing={2}>
           <Grid item>
-            <ButtonBase sx={{ width: 128, height: 128 }} justifyContent="center" textAlign="center">
+            <ButtonBase sx={{ width: 128, height: 128 }}>
               <Img alt="character" src={character.image} sx={{ borderRadius: '50%' }} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
+            <Grid item container direction="column" spacing={2}>
+              <Grid item>
                 <Typography variant="subtitle1" fontWeight="bold">
                   {character.name}
                 </Typography>
@@ -51,7 +50,6 @@ export const Character = () => {
                   {character.description}
                 </Typography>
               </Grid>
-              <Grid item></Grid>
             </Grid>
           </Grid>
         </Grid>

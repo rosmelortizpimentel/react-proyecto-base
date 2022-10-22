@@ -15,7 +15,7 @@ export const SeriesGrid = () => {
   const { idCharacter } = useParams();
   const { series, isLoading } = useGetseries(idCharacter);
 
-  const message = series.length == 0 ? 'No results found' : '';
+  const message = series.length === 0 ? 'No results found' : '';
   if (isLoading)
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>
@@ -28,7 +28,7 @@ export const SeriesGrid = () => {
       {message}
       <Grid container justifyContent="center" alignItems="center">
         <Grid item container xs={12} spacing={2} justifyContent="center">
-          {series.map((per) => (
+          {series?.map((per) => (
             <Grid item xs={12} sm={4} md={3} xl={2} key={per.id} sx={{ minWidth: 200 }}>
               <Item>
                 <img

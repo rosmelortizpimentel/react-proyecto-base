@@ -7,7 +7,6 @@ export const MarvelRoutes = () => {
       <Route path="/" element={<MarvelPage />} />
       <Route path="/search/:nameCharacter" element={<MarvelPage />} />
       <Route path="/details/:idCharacter" element={<DetailsPage />} />
-      {/* <Route path="/*" element={<Navigate to="/" />} /> */}
     </Routes>
   );
 };

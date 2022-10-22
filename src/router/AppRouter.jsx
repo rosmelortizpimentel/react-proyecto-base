@@ -5,8 +5,8 @@ import { MarvelRoutes } from '../marvel/routes/MarvelRoutes';
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/auth/*" element={<AuthRoutes />} />
-      <Route path="*" element={<MarvelRoutes />} />
+      <Route path="/marvel/*" element={<MarvelRoutes />} />
+      <Route path="*" element={<AuthRoutes />} />
     </Routes>
   );
 };

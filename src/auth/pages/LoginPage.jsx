@@ -11,7 +11,9 @@ export const LoginPage = () => {
   const [message, setMessage] = useState();
 
   const onNavigateHome = () => {
-    user && password ? navigate('/', { replace: true }) : setMessage('Enter your credentials');
+    user && password
+      ? navigate('/marvel', { replace: true })
+      : setMessage('Enter your credentials');
   };
   const onUserChange = (event) => {
     setUser(event.target?.value);

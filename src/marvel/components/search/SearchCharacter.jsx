@@ -15,7 +15,7 @@ export const SearchCharacter = ({ onNewSearch }) => {
 
   const onSumbit = (event) => {
     event.preventDefault();
-    if (inputValue === '') return navigate(`/`);
+    if (inputValue === '') return navigate(`/marvel`);
     if (inputValue.trim().length <= 1) return;
     setinputVaue('');
     onNewSearch(inputValue.trim());

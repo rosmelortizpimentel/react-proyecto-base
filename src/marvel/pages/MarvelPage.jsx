@@ -6,20 +6,14 @@ import { useState } from 'react';
 
 export const MarvelPage = () => {
   const navigate = useNavigate();
-  // const { nameCharacter } = useParams();
-  // const [search, setSearch] = useState();
 
   const [searches, setSearches] = useState([]);
   const onNewSearch = (newSearch) => {
     if (searches.includes(newSearch)) return;
-    if (newSearch === '') return navigate(`/`);
+    if (newSearch === '') return navigate(`/marvel`);
     setSearches([newSearch, ...searches]);
-    navigate(`/search/${newSearch}`);
+    navigate(`/marvel/search/${newSearch}`);
   };
-
-  // useEffect(() => {
-  //   setSearch(nameCharacter);
-  // }, [nameCharacter]);
 
   return (
     <>

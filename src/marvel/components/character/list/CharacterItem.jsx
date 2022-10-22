@@ -27,7 +27,7 @@ export const CharacterItem = ({
 }) => {
   const navigate = useNavigate();
   const onNavigateDetail = (id) => {
-    navigate('/details/' + id, { replace: true });
+    navigate('/marvel/details/' + id, { replace: true });
   };
 
   const nameStyles = {

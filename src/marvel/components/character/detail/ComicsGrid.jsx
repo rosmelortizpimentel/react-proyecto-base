@@ -15,7 +15,7 @@ export const ComicsGrid = () => {
   const { idCharacter } = useParams();
   const { comics, isLoading } = useGetComics(idCharacter);
 
-  const message = comics.length == 0 ? 'No results found' : '';
+  const message = comics.length === 0 ? 'No results found' : '';
   if (isLoading)
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 2 }}>
@@ -46,8 +46,8 @@ export const ComicsGrid = () => {
                 <Typography
                   variant="body2"
                   fontWeight="bold"
-                  color={per.price == 0 ? 'secondary' : 'primary'}>
-                  {per.price == 0 ? 'Priceless' : 'Price $' + per.price}
+                  color={per.price === 0 ? 'secondary' : 'primary'}>
+                  {per.price === 0 ? 'Priceless' : 'Price$' + per.price}
                 </Typography>
               </Item>
             </Grid>
